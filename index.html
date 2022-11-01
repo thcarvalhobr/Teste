@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+    <body>
+        <header>
+            <h1>SEM TAREFAS</h1>
+            <div id="menu-cabecalho">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#" onclick="exibir();">Adicionar</a></li>
+                        <li><a href="#" onclick="cadastrar();">Tarefas</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="centro">
+            <div id="cadastrar">
+                <input id="texto" placeholder="Digite a sua tarefa">
+                <button onclick="adicionar();" id="botao">NOVA TAREFA</button> 
+            </div>
+            <div id="exibir"></div>
+        </div>
+    </body>
+    <script>
+        function adicionar(){
+            const conteudo = document.getElementById('texto').value;
+            const novaH2 = document.createElement('H2');
+            const novoBotao = document.createElement('button');
+            novoBotao.innerHTML = "Excluir";
+            novaH2.innerHTML = conteudo;
+
+            novaH2.addEventListener('click',function(){
+                novaH2.style.color = "rgb(20,9,0)";
+                novaH2.style.textDecoration = "line-through"
+            })
+
+            novoBotao.addEventListener('click',function(){
+                novaH2.remove();
+                novoBotao.remove();
+            })
+
+            document.body.appendChild(novaH2);
+            document.body.appendChild(novoBotao);
+            document.getElementById('texto').value = "";
+        }
+
+        function cadastrar(){
+            document.getElementById('cadastrar').style.display="none";
+            document.getElementById('exibir').style.display="block";   
+        }
+
+        function exibir(){
+            document.getElementById('cadastrar').style.display="block";
+            document.getElementById('exibir').style.display="none";   
+        }
+
+        document.replaceChild(exibir, cadastrar);
+    </script>   
+</html>
