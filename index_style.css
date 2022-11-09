@@ -1,0 +1,152 @@
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+body {
+    height: 100%;
+    background-color: #F4EDC3;
+}
+
+* {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+p {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 10px;
+}
+
+
+#log {
+    display: block;
+    margin: 0;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20pt;
+    font-weight: bold;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(90deg, #6AAB2B, #2f9e41);
+    background-size: 200% 100%;
+    animation: gradient 10s ease infinite;
+}
+
+h1 {
+    font-family: Onyx, sans-serif;
+    font-size: 60px;
+    text-align: center;
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+#log p {
+    font-size: 14px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: rgb(29, 27, 27);
+}
+
+.log span {
+    display: none;
+    font-size: 14px;
+    margin-top: 1rem;
+    text-align: start;
+    margin-left: 435px;
+    color: #8d0909;
+    transition: all 1s;
+}
+
+#nome {
+    color: rgb(29, 27, 27);
+    width: 300px;
+    background: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    align-items: center;
+    outline: none;
+}
+
+#login {
+    color: rgb(29, 27, 27);
+    width: 300px;
+    background: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    align-items: center;
+    outline: none;
+}
+
+#email {
+    color: rgb(29, 27, 27);
+    width: 300px;
+    background: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    align-items: center;
+    outline: none;
+}
+
+#senha {
+    color: rgb(29, 27, 27);
+    width: 300px;
+    background: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    align-items: center;
+    outline: none;
+}
+
+#confsenha {
+    color: rgb(29, 27, 27);
+    width: 300px;
+    background: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    align-items: center;
+    outline: none;
+}
+
+.button {
+    width: 150px;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.5s;
+    background-color: #EFD330;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #A38D10;
+    cursor: pointer;
+    transition: all 0.5s;
+    color: rgb(255, 255, 255);
+}
