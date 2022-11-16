@@ -1,56 +1,126 @@
-function adicionar() {
-    const conteudo = document.getElementById('texto').value;
-    const novaH2 = document.createElement('H2');
-    const novoBotao = document.createElement('button');
-    novoBotao.innerHTML = "Excluir";
-    novaH2.innerHTML = conteudo;
+document.addEventListener("keypress", function (e) {
+    if(e.key ==="Enter"){
+        const button = document.querySelector(".button");
+        
+        button.click();
 
-    novaH2.addEventListener('click', function () {
-        novaH2.style.color = "rgb(20,9,0)";
-        novaH2.style.textDecoration = "line-through"
-    })
+    }
+});
 
-    novoBotao.addEventListener('click', function () {
-        novaH2.remove();
-        novoBotao.remove();
-    })
+const form = document.getElementById('form');
+const nome = document.getElementById('nome');
+const login = document.getElementById('login');
+const email = document.getElementById('email');
+const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/; /*regex email padrão*/
+/*const emailRegex = /\W|_/; /*Regex caractere especial*/ 
+const senha = document.getElementById('senha');
+const confsenha = document.getElementById('confsenha');
+const span = document.querySelectorAll('span');
 
-    document.body.appendChild(novaH2);
-    document.body.appendChild(novoBotao);
-    document.getElementById('texto').value = "";
+//form.addEventListener('submit', (e) => {
+//    e.preventDefault()
+//})
+
+function entrar(){
+    //alert('teste');
+    window.location.href ="todolist.html";
+    if(nome.value,login.value,email.value,senha.value,confsenha.value ==  "" )
+    {
+
+    }
+    else if(nome.value.length < 10 ,login.value.length > 10,!emailRegex.test(email.value),senha.value != confsenha.value)
+    {
+
+    }
+    else
+    {
+       
+    }
 }
 
-function cadastrar() {
-    document.getElementById('cadastrar').style.display = "none";
-    document.getElementById('exibir').style.display = "block";
-    document.getElementById('dados').style.display = "block";
+function nomeValidar(){
+    
+    if(nome.value == "")
+    {
+        nome.style.border=" 0px solid #fff";
+        span[0].style.display="none";
+    }
+    else if(nome.value.length < 10)
+    {
+        nome.style.border="3px solid #DB5A5A";
+        span[0].style.display="block";
+    }
+    else
+    {
+        nome.style.border="3px solid #4ECA64";
+        span[0].style.display="none";
+        var nomeSave = document.querySelector("#nome").value;
+        localStorage.setItem('nome', nomeSave);
+    }
 }
 
-function exibir() {
-    document.getElementById('cadastrar').style.display = "block";
-    document.getElementById('exibir').style.display = "none";
-    document.getElementById('dados').style.display = "block";
+function loginValidar(){
+    if(login.value == "")
+    {
+        login.style.border=" 0px solid #fff";
+        span[1].style.display="none";
+    }
+    else if(login.value.length > 10)
+    {
+        login.style.border="3px solid #DB5A5A";
+        span[1].style.display="block";
+    }
+    else
+    {
+        login.style.border="3px solid #4ECA64";
+        span[1].style.display="none";
+        var loginSave = document.querySelector("#login").value;
+        localStorage.setItem('login', loginSave);
+    }
 }
 
-function dados() {
-    document.getElementById('cadastrar').style.display = "none";
-    document.getElementById('exibir').style.display = "none";
-    document.getElementById('dados').style.display = "block";
-
-    var nomeDado = (localStorage.getItem('nome'));
-    var loginDado = (localStorage.getItem('login'));
-    var emailDado = (localStorage.getItem('email'));
-    var senhaDado = (localStorage.getItem('senha'));
-
-    var p1 = document.getElementById("p1");
-    var p2 = document.getElementById("p2");
-    var p3 = document.getElementById("p3");
-    var p4 = document.getElementById("p4");
-
-    p1.innerText = "Nome: " + nomeDado;
-    p2.innerText = "Login: " + loginDado;
-    p3.innerText = "Email: " + emailDado;
-    p4.innerText = "Senha: " + senhaDado;
+function emailValidar(){
+    if(email.value == "")
+    {
+        email.style.border=" 0px solid #fff";
+        span[2].style.display="none";
+    }
+    else if(!emailRegex.test(email.value))
+    {
+        email.style.border="3px solid #DB5A5A";
+        span[2].style.display="block";
+    }
+    else
+    {
+        email.style.border="3px solid #4ECA64";
+        span[2].style.display="none";
+        var emailSave = document.querySelector("#email").value;
+        localStorage.setItem('email', emailSave);
+    }
 }
 
-document.replaceChild(exibir, cadastrar, dados);
+function compareSenha(){
+    if(senha.value == "" && confsenha.value == "" )
+    {
+        senha.style.border=" 0px solid #fff";
+        confsenha.style.border=" 0px solid #fff";
+        span[3].style.display="none";
+        span[4].style.display="none";
+    }
+    else if(senha.value == confsenha.value )
+    {
+        senha.style.border="3px solid #4ECA64";
+        confsenha.style.border="3px solid #4ECA64";
+        span[3].style.display="none";
+        span[4].style.display="none";
+        var senhaSave = document.querySelector("#senha").value;
+        localStorage.setItem('senha', senhaSave);
+    }
+    else
+    {
+        senha.style.border="3px solid #DB5A5A";
+        confsenha.style.border="3px solid #DB5A5A";
+        span[3].style.display="block";
+        span[4].style.display="block";
+    }
+}
