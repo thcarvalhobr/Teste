@@ -96,4 +96,5 @@ h1{
 
 input:focus {
     border-color: #5f5600;
+    outline: none;
 }
