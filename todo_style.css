@@ -22,6 +22,10 @@ h1{
     color: #701A11;
 }
 
+#conteudo {
+    display: none;
+}
+
 #texto{
     font-family: Segoe UI, sans-serif;
     border-radius: 10px;
@@ -97,4 +101,49 @@ h1{
 input:focus {
     border-color: #5f5600;
     outline: none;
+}
+
+#cadastro_dados input, label{
+    text-align: left;
+    align-self: left;
+    align-content: left;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Segoe Ui', sans-serif;
+    font-size: 15px;
+}
+
+#cadastro_dados input {
+    width: 15rem;
+    padding: 5px;
+    margin-bottom: 0.5rem;
+    align-content: left;
+}
+
+#cadastro_dados button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: #B0291A;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    transition-duration: 0.3s;
+}
+
+#cadastro_dados button:hover {
+    background-color: #701A11;
+}
+
+#cadastro_dados span {
+    display: none;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: #B0291A;
+    font-weight: 700;
+    transition-duration: 0.3s;
+    transition-property: ease;
 }
