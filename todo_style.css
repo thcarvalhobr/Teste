@@ -26,6 +26,10 @@ h1{
     display: none;
 }
 
+#cadastro_dados {
+    display: block;
+}
+
 #texto{
     font-family: Segoe UI, sans-serif;
     border-radius: 10px;
