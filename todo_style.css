@@ -30,6 +30,10 @@ h1{
     display: block;
 }
 
+#mostraDados {
+    display: none;
+}
+
 #texto{
     font-family: Segoe UI, sans-serif;
     border-radius: 10px;
