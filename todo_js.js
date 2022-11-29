@@ -25,29 +25,21 @@ function adicionar() {
 function cadastrar() {
     document.getElementById('cadastrar').style.display = "none";
     document.getElementById('exibir').style.display = "block";
-    document.getElementById('dados').style.display = "block";
+    document.getElementById('mostraDados').style.display = "none";
 }
 
 function exibir() {
     document.getElementById('cadastrar').style.display = "block";
     document.getElementById('exibir').style.display = "none";
-    document.getElementById('dados').style.display = "block";
+    document.getElementById('mostraDados').style.display = "none";
 }
 
 function dados() {
     document.getElementById('cadastrar').style.display = "none";
     document.getElementById('exibir').style.display = "none";
-    document.getElementById('dados').style.display = "block";
+    document.getElementById('mostraDados').style.display = "block";
 
-    var p1 = document.getElementById("p1");
-    var p2 = document.getElementById("p2");
-    var p3 = document.getElementById("p3");
-    var p4 = document.getElementById("p4");
-
-    p1.innerText = "Nome: " + nomeSalvo;
-    p2.innerText = "Login: " + loginSalvo;
-    p3.innerText = "Email: " + emailSalvo;
-    p4.innerText = "Senha: " + senhaSalva;
+    document.getElementById('mostraNome').innerHTML= nomeSalvo;
 }
 
 document.replaceChild(exibir, cadastrar, dados);
@@ -73,7 +65,6 @@ function nomeValido(){
         nome.style.transitionDuration="0.3s";
         span[0].style.display="none";
         span[0].style.transitionDuration="0.3s";
-        var nomeSalvo = document.getElementById("nome").value;
     }
 }
 
@@ -95,7 +86,6 @@ function loginValido(){
         login.style.backgroundColor="#92FFC0";
         login.style.transitionDuration="0.3s";
         span[1].style.display="none";
-        var loginSalvo = document.getElementById("login").value;
     }
 }
 
@@ -117,7 +107,6 @@ function mailValido(){
         email.style.backgroundColor="#92FFC0";
         email.style.transitionDuration="0.3s";
         span[2].style.display="none";
-        var emailSalvo = document.getElementById("email").value;
     }
 }
 
@@ -139,7 +128,6 @@ function senhaValida(){
         cfsenha.style.transitionDuration="0.3s";
         span[3].style.display="none";
         span[4].style.display="none";
-        var senhaSalva = document.getElementById("senha").value;
     }
     else
     {
@@ -153,6 +141,11 @@ function senhaValida(){
 }
 
 function botaoDados(){
-    document.getElementById("cadastro_dados").display="none";
-    document.getElementById("conteudo").display="block";
+    var nomeSalvo = document.getElementById("nome").value;
+    var loginSalvo = document.getElementById("login").value;
+    var emailSalvo = document.getElementById("email").value;
+    var senhaSalva = document.getElementById("senha").value;
+
+    document.getElementById('cadastro_dados').style.display="none";
+    document.getElementById('conteudo').style.display="block";
 }
