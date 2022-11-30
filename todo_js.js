@@ -22,24 +22,34 @@ function adicionar() {
     document.getElementById('texto').value = "";
 }
 
-function cadastrar() {
+function cadastrar() {   
     document.getElementById('cadastrar').style.display = "none";
     document.getElementById('exibir').style.display = "block";
     document.getElementById('mostraDados').style.display = "none";
+
+    document.getElementsByTagName('h2')[0].style.display = "block";
 }
 
 function exibir() {
     document.getElementById('cadastrar').style.display = "block";
     document.getElementById('exibir').style.display = "none";
     document.getElementById('mostraDados').style.display = "none";
+
+    document.getElementsByTagName('h2')[0].style.display = "block";
 }
 
 function dados() {
+
     document.getElementById('cadastrar').style.display = "none";
     document.getElementById('exibir').style.display = "none";
     document.getElementById('mostraDados').style.display = "block";
 
-    document.getElementById('mostraNome').innerHTML= nomeSalvo;
+    document.getElementById('mostraNome').innerText = nome.value;
+    document.getElementById('mostraLogin').innerText = login.value;
+    document.getElementById('mostraMail').innerText = email.value;
+    document.getElementById('mostraSenha').innerText = senha.value;
+
+    document.getElementsByTagName('h2')[0].style.display = "none";
 }
 
 document.replaceChild(exibir, cadastrar, dados);
@@ -87,6 +97,8 @@ function loginValido(){
         login.style.transitionDuration="0.3s";
         span[1].style.display="none";
     }
+
+    var loginSalvo = document.getElementById("login").value;
 }
 
 function mailValido(){
@@ -108,6 +120,8 @@ function mailValido(){
         email.style.transitionDuration="0.3s";
         span[2].style.display="none";
     }
+
+    var emailSalvo = document.getElementById("email").value;
 }
 
 function senhaValida(){
@@ -138,14 +152,11 @@ function senhaValida(){
         span[3].style.display="block";
         span[4].style.display="block";
     }
+
+    var senhaSalva = document.getElementById("senha").value;
 }
 
 function botaoDados(){
-    var nomeSalvo = document.getElementById("nome").value;
-    var loginSalvo = document.getElementById("login").value;
-    var emailSalvo = document.getElementById("email").value;
-    var senhaSalva = document.getElementById("senha").value;
-
     document.getElementById('cadastro_dados').style.display="none";
     document.getElementById('conteudo').style.display="block";
 }
