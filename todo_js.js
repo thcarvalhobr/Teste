@@ -97,8 +97,6 @@ function loginValido(){
         login.style.transitionDuration="0.3s";
         span[1].style.display="none";
     }
-
-    var loginSalvo = document.getElementById("login").value;
 }
 
 function mailValido(){
@@ -120,8 +118,6 @@ function mailValido(){
         email.style.transitionDuration="0.3s";
         span[2].style.display="none";
     }
-
-    var emailSalvo = document.getElementById("email").value;
 }
 
 function senhaValida(){
@@ -152,8 +148,6 @@ function senhaValida(){
         span[3].style.display="block";
         span[4].style.display="block";
     }
-
-    var senhaSalva = document.getElementById("senha").value;
 }
 
 function botaoDados(){
