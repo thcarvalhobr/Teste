@@ -155,3 +155,28 @@ input:focus {
     transition-duration: 0.3s;
     transition-property: ease;
 }
+
+#mostraDados {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0;
+}
+
+#mostraLogin, #mostraNome, #mostraMail, #mostraSenha {
+    color: #B0291A;
+}
+
+button {
+    border-radius: 5px;
+    font-family: Segoe UI, sans-serif;
+    padding: 3px 5px;
+    font-weight: bold;
+    background-color: rgb(240,240,240);
+    color: rgb(29,29,27);
+    font-size: 15px;
+    border-style: solid;
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 0.2rem;
+}
